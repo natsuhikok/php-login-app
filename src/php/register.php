@@ -1,4 +1,5 @@
 <?php
+session_start();
 ini_set( 'display_errors', 1 );
 // variables
 $values['email'] = '';
@@ -25,6 +26,7 @@ if ($validation) {
     $_SESSION['roll'] = 'user';
     // redirect to home
     header("Location: home.php");
+    exit;
   }
 }
 
