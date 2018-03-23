@@ -9,15 +9,15 @@ $validate_messages['password'] = '';
 $validate_messages['name'] = '';
 $validation;
 
-// view:
 require_once('views/register_page.php');
-
-// models:
 require_once('models/validation.php');
 require_once('models/add_user.php');
 
-// $_POST have something then do validation
-if ($_POST) list($values, $validate_messages, $validation) = validation($values);
+
+// $_POST have something then validate
+if ($_POST) {
+  list($values, $validate_messages, $validation) = validation($values);
+}
 
 // all validation is pass then add user into database
 if (isset($validation) && $validation) {
