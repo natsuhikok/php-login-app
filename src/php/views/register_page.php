@@ -2,7 +2,8 @@
 require_once('views/head.php');
 function print_register_page($values, $messages) {
   // page title
-  $title = 'Register | User Management Demo';
+  $title = 'Register | PHP LOGIN APP';
+  
   // values
   $email_value = $values['email'];
   $pwd_value = $values['password'];

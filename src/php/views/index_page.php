@@ -2,8 +2,8 @@
 require_once('views/head.php');
 function print_index_page($values, $messages) {
   // page title
-  //
   $title = 'Login | PHP LOGIN APP';
+  
   // values
   $email_value = $values['email'];
   $pwd_value = $values['password'];
