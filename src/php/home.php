@@ -1,7 +1,4 @@
 <?php
 session_start();
-if (isset($_SESSION['message'])) {
-  print $_SESSION['message'];
-  unset($_SESSION['message']);
-}
-?>
+require_once('views/session_message.php');
+print_session_message();

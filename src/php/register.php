@@ -9,6 +9,7 @@ $validate_messages = [];
 $validation = false;
 
 require_once('views/register_page.php');
+require_once('views/session_message.php');
 require_once('models/validation.php');
 require_once('models/add_user.php');
 
@@ -32,9 +33,5 @@ if ($validation) {
 
 // print page
 print_register_page($values, $validate_messages);
-
 // print and unset session message
-if (isset($_SESSION['message'])) {
-  print $_SESSION['message'];
-  unset($_SESSION['message']);
-}
+print_session_message();

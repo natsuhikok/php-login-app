@@ -11,6 +11,7 @@ $validation = false;
 require_once('models/validation.php');
 require_once('models/login.php');
 require_once('views/index_page.php');
+require_once('views/session_message.php');
 
 
 // $_POST have something then validate
@@ -41,7 +42,4 @@ if ($validation) {
 print_index_page($values, $validate_messages);
 
 // print and unset session message
-if (isset($_SESSION['message'])) {
-  print $_SESSION['message'];
-  unset($_SESSION['message']);
-}
+print_session_message();
