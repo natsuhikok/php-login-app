@@ -1,8 +1,7 @@
 <?php
-require_once('db/connect.php');
-
 function login($values) {
   // connect or return
+  require_once('db/connect.php');
   $db = connect();
   if ($db -> connect_error) return;
 

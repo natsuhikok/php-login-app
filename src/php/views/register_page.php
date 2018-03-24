@@ -1,7 +1,7 @@
 <?php
-require_once('views/head.php');
 function print_register_page($values, $messages) {
   // page title
+  require_once('views/head.php');
   $title = 'Register | PHP LOGIN APP';
   
   // values
