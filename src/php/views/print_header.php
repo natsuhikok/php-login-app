@@ -11,13 +11,16 @@ function print_header() {
         <a href="./logout.php">logout</a>
       </li>
       <li>
-        <a href="./edituser.php">edituser</a>
+        <form class="" action="edituser.php" method="post">
+          <input type="hidden" name="edit" value="<?php echo $_SESSION['id']; ?>">
+          <input type="submit" value="edit profile">
+        </form>
       </li>
-<?php if($_SESSION['roll'] == 'admin') {?>
+      <?php if($_SESSION['roll'] == 'admin') {?>
       <li>
         <a href="./admin.php">admin panel</a>
       </li>
-<?php }; ?>
+      <?php }; ?>
     </ul>
   </nav>
 </header>
