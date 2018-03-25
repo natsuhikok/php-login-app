@@ -7,8 +7,10 @@ function print_edituser_page($values, $values_password, $messages) {
   // values
   $email_value = $values['email'];
   $name_value = $values['name'];
+  $roll_value = $values['roll'];
   $new_password = $values_password['new_password'];
   $old_password = $values_password['old_password'];
+
   // messages
   $email_msg = isset($messages['email']) ? $messages['email'] : '';
   $name_msg = isset($messages['name']) ? $messages['name'] : '';
@@ -38,6 +40,14 @@ function print_edituser_page($values, $values_password, $messages) {
         <label for="name">Name<span><?php echo $name_msg; ?></span></label>
         <input class="<?php echo $name_css; ?>" id="name" type="text" name="name" value="<?php echo $name_value; ?>">
       </div>
+      <?php if ($_SESSION['roll'] == 'admin') { ?>
+      <div>
+        <input id="roll-admin" type="radio" name="roll" value="admin" <?php if($roll_value == 'admin') echo 'checked'; ?>>
+        <label for="roll-admin">Admin</label>
+        <input id="roll-user" type="radio" name="roll" value="user" <?php if($roll_value == 'user') echo 'checked'; ?>>
+        <label for="roll-user">User</label>
+      </div>
+      <?php } ?>
       <input type="submit" value="edit">
     </form>
     <form action method="post">

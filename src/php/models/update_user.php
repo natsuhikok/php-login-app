@@ -8,8 +8,9 @@ function update_user_info($values, $ID) {
   // define insert data and SQL
   $EMAIL = $values['email'];
   $NAME = $values['name'];
+  $ROLL = $values['roll'];
   $AVATOR = 1;
-  $sql = "UPDATE user SET EMAIL = '$EMAIL', NAME = '$NAME', AVATOR = '$AVATOR' WHERE ID = '$ID';";
+  $sql = "UPDATE user SET ROLL = '$ROLL', EMAIL = '$EMAIL', NAME = '$NAME', AVATOR = '$AVATOR' WHERE ID = '$ID';";
 
   // execute !!!
   if ($db -> query($sql)) {
