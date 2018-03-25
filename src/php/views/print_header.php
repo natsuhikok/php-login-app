@@ -8,7 +8,7 @@ function print_header() {
   <nav>
     <ul>
       <li>
-        <a href="./logout.php">logout</a>
+        <a href="./home.php">home</a>
       </li>
       <li>
         <form class="" action="edituser.php" method="post">
@@ -21,6 +21,9 @@ function print_header() {
         <a href="./admin.php">admin panel</a>
       </li>
       <?php }; ?>
+      <li>
+        <a href="./logout.php">logout</a>
+      </li>
     </ul>
   </nav>
 </header>
