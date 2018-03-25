@@ -1,7 +1,7 @@
 <?php
 function print_index_page($values, $messages) {
   // page title
-  require_once('views/head.php');
+  require_once('views/print_head.php');
   $title = 'Login | PHP LOGIN APP';
 
   // values

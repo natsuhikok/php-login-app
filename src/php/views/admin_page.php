@@ -1,7 +1,7 @@
 <?php
 function print_admin_page($user_list) {
   require_once('views/print_header.php');
-  require_once('views/head.php');
+  require_once('views/print_head.php');
   $title = 'Admin | PHP LOGIN APP';
 ?>
 
