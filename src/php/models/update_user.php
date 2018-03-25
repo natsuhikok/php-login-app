@@ -1,0 +1,23 @@
+<?php
+function update_user_info($values, $ID) {
+  // connect or return
+  require_once('db/connect.php');
+  $db = connect();
+  if ($db -> connect_error) return;
+
+  // define insert data and SQL
+  $EMAIL = $values['email'];
+  $NAME = $values['name'];
+  $AVATOR = 1;
+  $sql = "UPDATE user SET EMAIL = '$EMAIL', NAME = '$NAME', AVATOR = '$AVATOR' WHERE ID = '$ID';";
+
+  // execute !!!
+  if ($db -> query($sql)) {
+    return true;
+  } else {
+    // if error while execution, add error message
+    $_SESSION['message'] = $db -> error;
+    return false;
+  }
+}
+?>
