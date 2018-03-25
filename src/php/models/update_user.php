@@ -9,7 +9,7 @@ function update_user_info($values, $ID) {
   $EMAIL = $values['email'];
   $NAME = $values['name'];
   $ROLL = $values['roll'];
-  $AVATOR = 1;
+  $AVATOR = $values['avator'];
   $sql = "UPDATE user SET ROLL = '$ROLL', EMAIL = '$EMAIL', NAME = '$NAME', AVATOR = '$AVATOR' WHERE ID = '$ID';";
 
   // execute !!!

@@ -21,12 +21,14 @@ if (isset($_POST['edit'])) {
   $_SESSION['editing_email'] = $user['EMAIL'];
   $_SESSION['editing_id'] = $user['ID'];
   $_SESSION['editing_roll'] = $user['ROLL'];
+  $_SESSION['editing_avator'] = $user['AVATOR'];
 }
 
 // variables
 $input_values['email'] = $_SESSION['editing_email'];
 $input_values['name'] = $_SESSION['editing_name'];
 $input_values['roll'] = $_SESSION['editing_roll'];
+$input_values['avator'] = $_SESSION['editing_avator'];
 $input_values_password['old_password'] = '';
 $input_values_password['new_password'] = '';
 $validate_messages = [];

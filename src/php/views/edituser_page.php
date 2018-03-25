@@ -8,6 +8,7 @@ function print_edituser_page($values, $values_password, $messages) {
   $email_value = $values['email'];
   $name_value = $values['name'];
   $roll_value = $values['roll'];
+  $avator_value = $values['avator'];
   $new_password = $values_password['new_password'];
   $old_password = $values_password['old_password'];
 
@@ -40,6 +41,10 @@ function print_edituser_page($values, $values_password, $messages) {
         <label for="name">Name<span><?php echo $name_msg; ?></span></label>
         <input class="<?php echo $name_css; ?>" id="name" type="text" name="name" value="<?php echo $name_value; ?>">
       </div>
+      <?php
+        require_once('views/print_form_avator.php');
+        print_form_avator($avator_value);
+      ?>
       <?php if ($_SESSION['roll'] == 'admin') { ?>
       <div>
         <input id="roll-admin" type="radio" name="roll" value="admin" <?php if($roll_value == 'admin') echo 'checked'; ?>>
