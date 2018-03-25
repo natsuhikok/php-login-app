@@ -1,7 +1,7 @@
 <?php
   function connect() {
     // get config
-    require_once('db/secret.php');
+    require('db/secret.php');
 
     // connect database
     $db = new mysqli(

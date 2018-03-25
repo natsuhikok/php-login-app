@@ -1,18 +1,20 @@
 <?php
-function login($values) {
+require_once('db/connect.php');
+
+// with $password: verify password
+function find_user_by_email($email, $password = false) {
   // connect or return
-  require_once('db/connect.php');
   $db = connect();
   if ($db -> connect_error) return;
 
   // find email from database
-  $EMAIL = $values['email'];
-  $sql = "SELECT * FROM user WHERE EMAIL = '$EMAIL'";
+  $sql = "SELECT * FROM user WHERE EMAIL = '$email'";
 
   if ($result = $db -> query($sql)) {
-    // verify password
     if ($row = $result -> fetch_assoc()) {
-      if (password_verify($values['password'], $row['PASSWORD'])) {
+      // verify password
+      if (!$password) return $row;
+      if (password_verify($password, $row['PASSWORD'])) {
         return $row;
       }
     }
@@ -21,4 +23,3 @@ function login($values) {
   $_SESSION['message'] = 'email or password is wrong.';
   return false;
 }
-?>

@@ -11,7 +11,8 @@ $validate_messages = [];
 $validation = false;
 
 require_once('models/validation.php');
-require_once('models/login.php');
+require_once('models/find_user.php');
+require_once('models/set_login_session.php');
 require_once('views/index_page.php');
 require_once('views/session_message.php');
 
@@ -23,19 +24,12 @@ if ($_POST) {
 
 // all validation is pass then try to login
 if ($validation) {
-  $data = login($values);
-  if ($data) {
+  $user_data = find_user_by_email($values['email'], $values['password']);
+  if ($user_data) {
     // set SESSIONS
-    $_SESSION['roll'] = $data['ROLL'];
-    $_SESSION['name'] = $data['NAME'];
+    $_SESSION = set_login_session($_SESSION, $user_data);
     $_SESSION['message'] = 'login success.';
-    if ($data['ROLL'] == 'user') {
-      // redirect to home
-      header("Location: home.php");
-    } else {
-      // redirect to admin
-      header("Location: admin.php");
-    }
+    header("Location: home.php");
     exit;
   }
 }

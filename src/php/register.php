@@ -2,6 +2,8 @@
 session_start();
 ini_set( 'display_errors', 1 );
 require_once('models/redirect.php');
+require_once('models/find_user.php');
+require_once('models/set_login_session.php');
 redirect_if_not('none');
 
 // variables
@@ -24,13 +26,13 @@ if ($_POST) {
 // all validation is pass then add user into database
 if ($validation) {
   if (add_user($values)) {
-    // add session[name & roll & message]
-    $_SESSION['name'] = $values['name'];
-    $_SESSION['message'] = 'wellcome, '.$values['name'].'!';
-    $_SESSION['roll'] = 'user';
-    // redirect to home
-    header("Location: home.php");
-    exit;
+    if ($user_data = find_user_by_email($values['email'])) {
+      // set SESSIONS
+      $_SESSION = set_login_session($_SESSION, $user_data);
+      $_SESSION['message'] = 'login success.';
+      header("Location: home.php");
+      exit;
+    }
   }
 }
 
