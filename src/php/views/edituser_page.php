@@ -2,6 +2,9 @@
 function print_edituser_page($values, $values_password, $messages) {
   require_once('views/print_header.php');
   require_once('views/print_head.php');
+  require_once('views/print_form_email.php');
+  require_once('views/print_form_name.php');
+  require_once('views/print_form_avator.php');
   $title = 'Edit user info | PHP LOGIN APP';
 
   // values
@@ -19,8 +22,6 @@ function print_edituser_page($values, $values_password, $messages) {
   $old_password_msg = isset($messages['old_password']) ? $messages['old_password'] : '';
 
   // input class
-  $email_css = empty($email_msg) ? '' : 'error';
-  $name_css = empty($name_msg) ? '' : 'error';
   $new_password_css = empty($new_password_msg) ? '' : 'error';
   $old_password_css = empty($old_password_msg) ? '' : 'error';
 ?>
@@ -30,21 +31,9 @@ function print_edituser_page($values, $values_password, $messages) {
   <body>
     <?php print_header(); ?>
     <form action method="post">
-      <div>
-        <label for="email">
-          Email
-          <span><?php echo $email_msg; ?></span>
-        </label>
-        <input class="<?php echo $email_css; ?>" type="text" name="email" value="<?php echo $email_value; ?>">
-      </div>
-      <div>
-        <label for="name">Name<span><?php echo $name_msg; ?></span></label>
-        <input class="<?php echo $name_css; ?>" id="name" type="text" name="name" value="<?php echo $name_value; ?>">
-      </div>
-      <?php
-        require_once('views/print_form_avator.php');
-        print_form_avator($avator_value);
-      ?>
+      <?php print_form_email($email_value, $email_msg); ?>
+      <?php print_form_name($name_value, $name_msg); ?>
+      <?php print_form_avator($avator_value); ?>
       <?php if ($_SESSION['roll'] == 'admin') { ?>
       <div>
         <input id="roll-admin" type="radio" name="roll" value="admin" <?php if($roll_value == 'admin') echo 'checked'; ?>>
