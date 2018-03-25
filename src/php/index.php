@@ -1,6 +1,8 @@
 <?php
 session_start();
 ini_set( 'display_errors', 1 );
+require_once('models/redirect.php');
+redirect_if_not('none');
 
 // variables & functions
 $values['email'] = '';
