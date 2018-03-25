@@ -4,7 +4,10 @@ function print_header() {
 ?>
 
 <header>
-  <p><?php print $_SESSION['name']; ?></p>
+  <p>
+    <img src="./assets/images/0<?php print $_SESSION['avator']; ?>.png" alt="">
+    <?php print $_SESSION['name']; ?>
+  </p>
   <nav>
     <ul>
       <li>
