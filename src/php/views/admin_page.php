@@ -12,6 +12,7 @@ function print_admin_page($user_list) {
     <table>
       <tr>
         <th>ID</th>
+        <th>AVATOR</th>
         <th>NAME</th>
         <th>EMAIL</th>
         <th>ROLL</th>
@@ -20,6 +21,9 @@ function print_admin_page($user_list) {
       <?php foreach($user_list as $user) { ?>
         <tr>
           <td><?php echo $user['ID']; ?></td>
+          <td>
+            <img src="./assets/images/0<?php echo $user['AVATOR']; ?>.png" alt="">
+          </td>
           <td><?php echo $user['NAME']; ?></td>
           <td><?php echo $user['EMAIL']; ?></td>
           <td><?php echo $user['ROLL']; ?></td>
