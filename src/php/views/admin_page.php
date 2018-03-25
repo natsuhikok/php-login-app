@@ -24,18 +24,19 @@ function print_admin_page($user_list) {
           <td><?php echo $user['EMAIL']; ?></td>
           <td><?php echo $user['ROLL']; ?></td>
           <td>
-            <form class="" action="" method="post">
-              <input type="hidden" name="delete" value="<?php echo $user['id']; ?>">
-              <input type="submit" name="delete" value="delete">
+            <form class="" action="" onsubmit="return confirmDeleteUser();" method="post">
+              <input type="hidden" name="delete" value="<?php echo $user['ID']; ?>">
+              <input type="submit" value="delete">
             </form>
             <form class="" action="edituser.php" method="post">
-              <input type="hidden" name="edit" value="<?php echo $user['id']; ?>">
-              <input type="submit" name="edit" value="edit">
+              <input type="hidden" name="edit" value="<?php echo $user['ID']; ?>">
+              <input type="submit" value="edit">
             </form>
           </td>
         </tr>
       <?php } ?>
     </table>
+    <script src="./assets/bundle.js" type="text/javascript"></script>
   </body>
 </html>
 
