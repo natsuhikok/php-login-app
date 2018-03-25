@@ -1,5 +1,5 @@
 <?php
-function print_edituser_page($values, $messages) {
+function print_edituser_page($values, $values_password, $messages) {
   require_once('views/print_header.php');
   require_once('views/print_head.php');
   $title = 'Edit user info | PHP LOGIN APP';
@@ -7,15 +7,19 @@ function print_edituser_page($values, $messages) {
   // values
   $email_value = $values['email'];
   $name_value = $values['name'];
-
+  $new_password = $values_password['new_password'];
+  $old_password = $values_password['old_password'];
   // messages
   $email_msg = isset($messages['email']) ? $messages['email'] : '';
   $name_msg = isset($messages['name']) ? $messages['name'] : '';
+  $new_password_msg = isset($messages['new_password']) ? $messages['new_password'] : '';
+  $old_password_msg = isset($messages['old_password']) ? $messages['old_password'] : '';
 
   // input class
   $email_css = empty($email_msg) ? '' : 'error';
   $name_css = empty($name_msg) ? '' : 'error';
-
+  $new_password_css = empty($new_password_msg) ? '' : 'error';
+  $old_password_css = empty($old_password_msg) ? '' : 'error';
 ?>
 
 <html>
@@ -35,6 +39,23 @@ function print_edituser_page($values, $messages) {
         <input class="<?php echo $name_css; ?>" id="name" type="text" name="name" value="<?php echo $name_value; ?>">
       </div>
       <input type="submit" value="edit">
+    </form>
+    <form action method="post">
+      <div>
+        <label for="old_password">
+          password
+          <span><?php echo $old_password_msg; ?></span>
+        </label>
+        <input class="<?php echo $old_password_css; ?>" type="password" name="old_password" value="<?php echo $old_password; ?>">
+      </div>
+      <div>
+        <label for="new_password">
+          new password
+          <span><?php echo $new_password_msg; ?></span>
+        </label>
+        <input class="<?php echo $new_password_css; ?>" type="password" name="new_password" value="<?php echo $new_password; ?>">
+      </div>
+      <input type="submit" value="change password">
     </form>
   </body>
 </html>
