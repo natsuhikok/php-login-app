@@ -9,7 +9,7 @@ function add_user($values) {
   $EMAIL = $values['email'];
   $NAME = $values['name'];
   $PASSWORD = password_hash($values['password'], PASSWORD_DEFAULT);
-  $AVATOR = 1;
+  $AVATOR =  intval($values['avator']);
 
   $sql = "INSERT INTO user (EMAIL, NAME, PASSWORD, AVATOR) VALUES ('$EMAIL', '$NAME', '$PASSWORD', '$AVATOR')";
 

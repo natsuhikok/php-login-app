@@ -10,6 +10,7 @@ redirect_if_not('none');
 $values['email'] = '';
 $values['password'] = '';
 $values['name'] = '';
+$values['avator'] = '1';
 $validate_messages = [];
 $validation = false;
 
