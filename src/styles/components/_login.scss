@@ -1,0 +1,36 @@
+.loginBackground {
+  background-image: url(./images/login-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.loginBox {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  background-color: rgba($c2, 0.8);
+  border-radius: 4px;
+  &--headline {
+    text-align: center;
+    color: $c2;
+    margin: 0;
+    text-align: center;
+    background-color: $c1;
+    border-radius: 4px 4px 0 0;
+    line-height: 2;
+    font-size: 1.4rem;
+  }
+  &--form {
+    .input input {
+      background-color: white !important;
+    }
+    &--btn {
+      margin: 1rem 0 0.2rem 0;
+      text-align: center;
+    }
+  }
+  &--link {
+    margin: 0 0 1rem 0;
+    text-align: center;
+  }
+}

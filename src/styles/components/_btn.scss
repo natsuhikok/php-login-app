@@ -7,11 +7,12 @@
   appearance: none;
   padding: 0.5rem 1rem;
   border: 1px solid $c3;
-  color: $c3;
+  color: $c2;
+  background-color: $c3;
   border-radius: 2px;
   transition: 0.2s;
   &:hover {
-    background-color: $c3;
-    color: $c2;
+    background-color: transparent;
+    color: $c3;
   }
 }
