@@ -35,7 +35,7 @@ function print_edituser_page($values, $values_password, $messages) {
       <?php print_form_name($name_value, $name_msg); ?>
       <?php print_form_avator($avator_value); ?>
       <?php if ($_SESSION['roll'] == 'admin') { ?>
-      <div>
+      <div class="input">
         <input id="roll-admin" type="radio" name="roll" value="admin" <?php if($roll_value == 'admin') echo 'checked'; ?>>
         <label for="roll-admin">Admin</label>
         <input id="roll-user" type="radio" name="roll" value="user" <?php if($roll_value == 'user') echo 'checked'; ?>>
@@ -45,15 +45,15 @@ function print_edituser_page($values, $values_password, $messages) {
       <input type="submit" value="edit">
     </form>
     <form action method="post">
-      <div>
-        <label for="old_password">
+      <div class="input">
+        <label class="input--label" for="old_password">
           password
           <span><?php echo $old_password_msg; ?></span>
         </label>
         <input class="<?php echo $old_password_css; ?>" type="password" name="old_password" value="<?php echo $old_password; ?>">
       </div>
-      <div>
-        <label for="new_password">
+      <div class="input">
+        <label class="input--label" for="new_password">
           new password
           <span><?php echo $new_password_msg; ?></span>
         </label>

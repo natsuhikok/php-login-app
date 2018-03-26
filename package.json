@@ -12,7 +12,7 @@
     "build:php": "cpx 'src/php/**/*' public/",
     "watch:php": "cpx 'src/php/**/*' public/ --watch",
     "build:sass": "node-sass ./src/styles/index.scss ./public/assets/style.css --output-style compressed",
-    "watch:sass": "node-sass ./src/styles/index.scss ./public/assets/style.css --watch",
+    "watch:sass": "nodemon -e scss -x \"npm run build:sass \"",
     "browsersync": "browser-sync start --proxy localhost --files 'public/' --port 8080",
     "clean": "rimraf ./public/",
     "build": "npm-run-all -s clean minify:images build:*",

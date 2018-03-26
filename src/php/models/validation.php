@@ -49,19 +49,19 @@ function validation($values) {
 
 function validate_email($v) {
   if (strlen($v) < 3) {
-    return 'enter vaild email';
+    return 'enter vaild ';
   }
 }
 
 function validate_password($v) {
   if (strlen($v) < 6) {
-    return 'password should be atleast 6 characters.';
+    return ' should be atleast 6 characters';
   }
 }
 
 function validate_name($v) {
   if (strlen($v) < 2) {
-    return 'name should be atleast 2 characters.';
+    return ' should be atleast 2 characters';
   }
 }
 
