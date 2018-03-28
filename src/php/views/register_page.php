@@ -5,6 +5,7 @@ function print_register_page($values, $messages) {
   require_once('views/print_form_avator.php');
   require_once('views/print_form_email.php');
   require_once('views/print_form_name.php');
+  require_once('views/print_header.php');
 
   $title = 'Register | PHP LOGIN APP';
 
@@ -27,6 +28,7 @@ function print_register_page($values, $messages) {
   <?php print_head($title); ?>
   <body>
     <div class="l-wrapper">
+      <?php print_header(); ?>
       <h1 class="headline">Register</h1>
       <div class="l-contents">
         <form action method="post">

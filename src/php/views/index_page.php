@@ -2,6 +2,7 @@
 function print_index_page($values, $messages) {
   // page title
   require_once('views/print_head.php');
+  require_once('views/print_header.php');
   require_once('views/print_form_email.php');
   $title = 'Login | PHP LOGIN APP';
 
@@ -20,6 +21,7 @@ function print_index_page($values, $messages) {
   <?php print_head($title); ?>
   <body>
     <div class="l-wrapper loginBackground">
+      <?php print_header(); ?>
       <div class="loginBox">
         <h1 class="loginBox--headline">PHP LOGIN APP</h1>
         <form class="loginBox--form" action method="post">
