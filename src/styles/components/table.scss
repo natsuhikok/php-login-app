@@ -1,0 +1,75 @@
+%table--lebel {
+  background-color: $c4;
+  padding: 0;
+  text-align: center;
+  margin-right: .4rem;
+  display: inline-block;
+  width: 50px;
+  color: $c2;
+  font-size: .7rem;
+  margin-left: 50px;
+}
+.table {
+  max-width: 500px;
+  width: 100% !important;
+  display: block;
+  margin: 0 auto;
+  tbody {
+    display: block;
+  }
+  &--heads {
+    display: none;
+  }
+  &--data {
+    display: block;
+    border-bottom: 1px solid $c5;
+    padding: .4rem 0;
+    position: relative;
+    &--id {
+      display: block;
+      &::before {
+        content: 'id';
+        @extend %table--lebel;
+      }
+    }
+    &--image {
+      display: block;
+      float: left;
+      position: absolute;
+      top: 20px;
+      img {
+        border-radius: 100%;
+        width: 40px;
+      }
+    }
+    &--name {
+      display: block;
+      &::before {
+        content: 'name';
+        @extend %table--lebel;
+      }
+    }
+    &--email {
+      display: block;
+      &::before {
+        content: 'email';
+        @extend %table--lebel;
+      }
+    }
+    &--roll {
+      position: absolute;
+      top: 12px;
+      left: 1px;
+      @extend %table--lebel;
+      &_user {
+        background-color: $c1;
+      }
+      &_admin {
+        background-color: $c3;
+      }
+    }
+    &--action {
+      display: none;
+    }
+  }
+}
