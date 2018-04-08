@@ -1,0 +1,16 @@
+.iconWrapper {
+    font-size: 1rem;
+}
+
+.iconWrapper_cog {
+    color: $c1;
+    &:hover {
+        color: darken($c1, 10%);
+    }
+}
+.iconWrapper_delete {
+    color: $c3;
+    &:hover {
+        color: darken($c3, 10%);
+    }
+}

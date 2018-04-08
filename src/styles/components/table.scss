@@ -69,7 +69,17 @@
       }
     }
     &--action {
-      display: none;
+      position: absolute;
+      width: 100px;
+      display: block;
+      right: 0;
+      top: 8px;
+      button {
+        background: none;
+        padding: 4px;
+        border: none;
+        float: left;
+      }
     }
   }
 }

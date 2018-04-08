@@ -34,13 +34,13 @@ function print_admin_page($user_list) {
                 <td class="table--data--roll table--data--roll_user"><?php echo $user['ROLL']; ?></td>
               <?php } ?>
               <td class="table--data--action">
-                <form class="" action="" onsubmit="return confirmDeleteUser();" method="post">
-                  <input type="hidden" name="delete" value="<?php echo $user['ID']; ?>">
-                  <input type="submit" value="delete">
-                </form>
                 <form class="" action="edituser.php" method="post">
                   <input type="hidden" name="edit" value="<?php echo $user['ID']; ?>">
-                  <input type="submit" value="edit">
+                  <button class="iconWrapper iconWrapper_cog" type="submit" value="edit"><i class="fas fa-cog"></i></button>
+                </form>
+                <form class="" action="" onsubmit="return confirmDeleteUser();" method="post">
+                  <input type="hidden" name="delete" value="<?php echo $user['ID']; ?>">
+                  <button class="iconWrapper iconWrapper_delete" type="submit" value="delete"><i class="far fa-trash-alt"></i></button>
                 </form>
               </td>
             </tr>
